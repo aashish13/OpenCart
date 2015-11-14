@@ -5,19 +5,17 @@
  */
 package com.opencart.dao;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import com.opencart.entity.Order;
+import java.util.ArrayList;
 /**
  *
  * @author Aashish
  */
-@Entity
-@Table(name = "orders")
 public class OrderDao {
     
-    @Id
-    private int order_id;
+    public static ArrayList<Order> getAllOrders()
+    {
+        return new ArrayList<Order>();
+    }
     
 }

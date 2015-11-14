@@ -10,7 +10,7 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.connection.username">n01043708</property>
     <property name="hibernate.connection.password">oracle</property>
-    <property name="hbm2ddl.auto">update</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="org.hibernate.tutorial.annotations.Event"/>
     
   </session-factory>

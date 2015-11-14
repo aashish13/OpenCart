@@ -5,10 +5,18 @@
  */
 package com.opencart.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Aashish
  */
+@Entity
+@Table(name = "orders")
 public class Order {
     
+    @Id
+    private int order_id;
 }
