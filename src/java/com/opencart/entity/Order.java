@@ -19,4 +19,5 @@ public class Order {
     
     @Id
     private int order_id;
+    
 }
