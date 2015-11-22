@@ -7,10 +7,12 @@ package com.opencart.dao;
 
 import com.opencart.entity.Order;
 import java.util.ArrayList;
+import org.springframework.stereotype.Repository;
 /**
  *
  * @author Aashish
  */
+@Repository
 public class OrderDao {
     
     public static ArrayList<Order> getAllOrders()

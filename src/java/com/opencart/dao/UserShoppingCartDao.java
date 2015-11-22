@@ -5,10 +5,13 @@
  */
 package com.opencart.dao;
 
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+
+
 /**
  *
  * @author Bangalore-pc
  */
-public class UserShoppingCartDao {
-    
+public class UserShoppingCartDao extends HibernateDaoSupport{
+   
 }

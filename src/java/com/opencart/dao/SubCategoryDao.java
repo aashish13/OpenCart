@@ -5,14 +5,10 @@
  */
 package com.opencart.dao;
 
-import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
-import org.springframework.stereotype.Repository;
-
 /**
  *
  * @author Aashish
  */
-@Repository
-public interface BaseDao{
+public class SubCategoryDao {
     
 }
