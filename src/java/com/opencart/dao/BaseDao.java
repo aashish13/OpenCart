@@ -5,6 +5,9 @@
  */
 package com.opencart.dao;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +16,12 @@ import org.springframework.stereotype.Repository;
  * @author Aashish
  */
 @Repository
-public interface BaseDao{
+public abstract class BaseDao {
     
+    @Autowired
+    SessionFactory sessionFactory;
+    
+    protected Session getSesstion(){
+        return sessionFactory.getCurrentSession();
+    }
 }

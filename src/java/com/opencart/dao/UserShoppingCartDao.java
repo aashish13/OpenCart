@@ -12,6 +12,6 @@ import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
  *
  * @author Bangalore-pc
  */
-public class UserShoppingCartDao extends HibernateDaoSupport{
+public class UserShoppingCartDao extends BaseDao{
    
 }

@@ -1,6 +1,7 @@
 
 import com.opencart.hibernate.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 
@@ -21,6 +22,7 @@ public class Test {
         System.out.println("This is a test class");
         Session session= HibernateUtil.getSessionFactory().openSession();
         Transaction t=session.beginTransaction();
+        
         
     }
 }

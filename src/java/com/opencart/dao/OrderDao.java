@@ -5,15 +5,17 @@
  */
 package com.opencart.dao;
 
-import com.opencart.entity.Order;
+import com.opencart.models.Order;
 import java.util.ArrayList;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 /**
  *
  * @author Aashish
  */
 @Repository
-public class OrderDao {
+public class OrderDao extends BaseDao{
     
     public static ArrayList<Order> getAllOrders()
     {
