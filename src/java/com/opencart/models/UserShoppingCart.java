@@ -10,7 +10,4 @@ package com.opencart.models;
  * @author Bangalore-pc
  */
 public class UserShoppingCart {
-    
-    
-    
 }
