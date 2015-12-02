@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
     @RequestMapping(value="/",method=RequestMethod.GET)
     public ModelAndView showIndex(){   
-        ModelAndView mv=new ModelAndView("index");
+        ModelAndView mv=new ModelAndView("main/index");
         return mv;
     }
 }
