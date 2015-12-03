@@ -8,8 +8,10 @@ package com.opencart.models;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 /**
  *
@@ -18,11 +20,12 @@ import javax.persistence.OneToMany;
 @Entity(name="sub_categories")
 public class SubCategory {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "sub_categories_seq_gen")
+    @SequenceGenerator(name="sub_categories_seq_gen",sequenceName="SUB_CATEGORY_SEQ")
     private int id;
     
-    @OneToMany(fetch = FetchType.LAZY)
-    private int categoryId;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Category category;
     
     private String subCategory;
 
@@ -32,12 +35,15 @@ public class SubCategory {
     public void setId(int id) {
         this.id = id;
     }
-    public int getCategoryId() {
-        return categoryId;
+
+    public Category getCategory() {
+        return category;
     }
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
+    
     public String getSubCategory() {
         return subCategory;
     }

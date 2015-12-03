@@ -6,8 +6,12 @@
 package com.opencart.models;
 
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -19,6 +23,8 @@ import org.springframework.beans.factory.annotation.Required;
 public class AppConfig {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "app_config_seq")
+    @SequenceGenerator(name="app_config_seq",sequenceName="APP_CONFIG_SEQ")
     private int id;
     
     private String key;
