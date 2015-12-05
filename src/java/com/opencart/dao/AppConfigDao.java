@@ -7,24 +7,18 @@ package com.opencart.dao;
 
 import com.opencart.entity.AppConfig;
 import java.util.List;
-import org.hibernate.Criteria;
-import org.hibernate.Transaction;
-import org.hibernate.criterion.DetachedCriteria;
-import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
-import org.springframework.transaction.annotation.Transactional;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Aashish
  */
-public class AppConfigDao extends BaseDao {
+@Repository
+public interface AppConfigDao {
     
-    @Transactional
-    public List<AppConfig> getAll(){
-        Criteria criteria=sessionFactory.getCurrentSession().createCriteria(AppConfig.class);
-        List<AppConfig> allAppconfig=criteria.list();
-        return allAppconfig;
-    }
-    
+    public void addAppconfig(AppConfig appConfig);
     
 }

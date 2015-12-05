@@ -7,9 +7,11 @@ package com.opencart.controller;
 
 import com.opencart.dao.AppConfigDao;
 import com.opencart.entity.*;
+import com.opencart.service.AppConfigService;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,15 +24,24 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class AdminController {
+    @Autowired
+    private AppConfigService appConfigService;
+    
     @RequestMapping(value="/admin",method=RequestMethod.GET)
     public ModelAndView showAdminIndex(){   
         ModelAndView mv=new ModelAndView("admin/index");
         return mv;
     }
+    
     @RequestMapping(value="/admin/appconf",method=RequestMethod.GET)
     public ModelAndView showAppConfigGet(HttpServletRequest request,HttpServletResponse response){   
-        //get all the rows from app_config table
-        //List<AppConfig> list=new AppConfigDao().getAll();
+        
+        //This is just to test an add using hibernate
+        AppConfig appconfig=new AppConfig();
+        appconfig.setKey("test");
+        appconfig.setValue("test");
+        appConfigService.addAppConfig(appconfig);
+        
         ModelAndView mv=new ModelAndView("admin/app_config");
         return mv;
     }
