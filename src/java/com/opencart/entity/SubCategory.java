@@ -33,8 +33,13 @@ public class SubCategory {
     @JoinColumn(name = "category_id")
     private Category category;
     
+
 //    @OneToMany(targetEntity = Product.class,mappedBy = "subCategory")
 //    private Set<Product> products;
+
+    @OneToMany(targetEntity = Product.class,mappedBy = "subCategory")
+    private Set<Product> products;
+
     
     private String subCategory;
 

@@ -24,4 +24,5 @@ public class UserShoppingCart {
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "user_shopping_cart_seq_gen")
     @SequenceGenerator(name="user_shopping_cart_seq_gen",sequenceName="USER_SHOPPING_CART_SEQ")
     private int id;
+
 }

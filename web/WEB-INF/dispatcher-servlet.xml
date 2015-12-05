@@ -33,7 +33,8 @@
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="driverClassName" value="oracle.jdbc.OracleDriver" />
         <property name="url" value="jdbc:oracle:thin:@dilbert.humber.ca:1521:grok"/>
-        <property name="username"  value="n01074309"/>
+
+        <property name="username"  value="n01072473"/>
         <property name="password"  value="oracle"/>
     </bean>
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
