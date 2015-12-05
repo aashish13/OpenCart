@@ -54,4 +54,5 @@ public class AdminController {
         ModelAndView mv=new ModelAndView("admin/app_config?action=showone");
         return mv;
     }
+    
 }
