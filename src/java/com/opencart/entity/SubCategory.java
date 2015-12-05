@@ -5,6 +5,7 @@
  */
 package com.opencart.entity;
 
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,6 +32,9 @@ public class SubCategory {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
+    
+    @OneToMany(targetEntity = Product.class,mappedBy = "subCategory")
+    private Set<Product> products;
     
     private String subCategory;
 

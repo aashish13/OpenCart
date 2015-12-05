@@ -29,6 +29,9 @@ public class Category {
     @OneToMany(targetEntity = SubCategory.class,mappedBy = "category")
     private Set<SubCategory> subCategories;
 
+//        @OneToMany(targetEntity = Product.class,mappedBy = "product")
+//    private Set<SubCategory> products;
+
     public int getId() {
         return id;
     }
