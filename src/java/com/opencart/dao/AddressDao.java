@@ -9,7 +9,7 @@ package com.opencart.dao;
  *
  * @author Bangalore-pc
  */
-public class AddressDao extends BaseDao{
+public interface AddressDao {
     
     
 }

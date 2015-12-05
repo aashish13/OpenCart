@@ -17,6 +17,8 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
@@ -27,7 +29,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @Configuration
 @ComponentScan("com.opencart")
 @EnableWebMvc@EnableTransactionManagement
-public class SpringConfigurations {
+public class SpringConfigurations extends WebMvcConfigurerAdapter{
     @Resource
     private Environment env;
     
@@ -53,7 +55,7 @@ public class SpringConfigurations {
 
     public Properties hibProperties() {
         Properties properties=new Properties();
-        properties.put("hibernate.hbm2ddl.auto", "create-drop");
+        properties.put("hibernate.hbm2ddl.auto", "update");
         properties.put("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
         properties.put("hibernate.show_sql", "true");
         return properties;
@@ -72,5 +74,10 @@ public class SpringConfigurations {
         resolver.setViewClass(JstlView.class);
         return resolver;
     }
-            
+    
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/style/**").addResourceLocations("/WEB-INF/css/");
+        registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/");
+    }
 }

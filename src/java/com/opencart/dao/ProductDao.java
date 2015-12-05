@@ -5,10 +5,15 @@
  */
 package com.opencart.dao;
 
+import com.opencart.entity.Product;
+import java.util.List;
 /**
  *
  * @author Bangalore-pc
  */
-public class ProductDao extends BaseDao{
+public interface ProductDao {
+    public void addProduct(Product product);
+    public void removeProduct(Product product);
+    public List<Product> getAllProducts();
     
 }

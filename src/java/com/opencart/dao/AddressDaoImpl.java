@@ -5,15 +5,10 @@
  */
 package com.opencart.dao;
 
-import com.opencart.entity.Order;
-import java.util.ArrayList;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 /**
  *
  * @author Aashish
  */
-public interface OrderDao {
+public class AddressDaoImpl {
     
 }

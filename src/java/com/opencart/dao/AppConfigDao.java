@@ -16,9 +16,10 @@ import org.springframework.stereotype.Repository;
  *
  * @author Aashish
  */
-@Repository
 public interface AppConfigDao {
     
     public void addAppconfig(AppConfig appConfig);
-    
+    public List<AppConfig> listAppconfig();
+    public boolean deleteAppConfig(AppConfig appConfig);
+    public AppConfig getAppConfigById(int id);
 }

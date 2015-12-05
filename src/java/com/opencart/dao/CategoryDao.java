@@ -9,6 +9,6 @@ package com.opencart.dao;
  *
  * @author Aashish
  */
-public class CategoryDao extends BaseDao{
+public interface CategoryDao {
     
 }
