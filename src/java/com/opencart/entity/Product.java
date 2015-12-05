@@ -5,6 +5,7 @@
  */
 package com.opencart.entity;
 
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -37,7 +40,13 @@ public class Product {
     @JoinColumn(name = "subcategory_id")
     private SubCategory subCategory;
 
+     @OneToOne(targetEntity = Promotion.class,mappedBy = "product")
+    private Set<Promotion> promotions;
     private String details;
+
+    @OneToMany(targetEntity = ProductReview.class,mappedBy = "product")
+    private Set<ProductReview> product_reviews;
+    
 
     public int getProduct_id() {
         return product_id;
