@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.opencart.models;
+package com.opencart.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,24 +15,28 @@ import javax.persistence.SequenceGenerator;
  *
  * @author Aashish
  */
-@Entity(name="categories")
-public class Category {
+@Entity(name="statuses")
+public class Status {
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "categories_seq_gen")
-    @SequenceGenerator(name="categories_seq_gen",sequenceName="CATEGORY_SEQ")
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "statuses_seq_gen")
+    @SequenceGenerator(name="statuses_seq_gen",sequenceName="STATUSES_SEQ")
     private int id;
-    private String category;
-
+    private String status;
+    
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
-    public String getCategory() {
-        return category;
+
+    public String getStatus() {
+        return status;
     }
-    public void setCategory(String category) {
-        this.category = category;
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -3,25 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.opencart.models;
+package com.opencart.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
 /**
  *
- * @author Bangalore-pc
+ * @author Aashish
  */
-@Entity
-@Table(name = "user_shopping_cart")
-public class UserShoppingCart {
-    
+@Entity(name = "payment_details")
+public class PaymentDetail {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "user_shopping_cart_seq_gen")
-    @SequenceGenerator(name="user_shopping_cart_seq_gen",sequenceName="USER_SHOPPING_CART_SEQ")
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "payment_details_seq")
+    @SequenceGenerator(name="payment_details_seq",sequenceName="PAYMENT_DETAILS_SEQ")
     private int id;
+    
+    
 }

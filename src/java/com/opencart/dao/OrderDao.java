@@ -5,7 +5,7 @@
  */
 package com.opencart.dao;
 
-import com.opencart.models.Order;
+import com.opencart.entity.Order;
 import java.util.ArrayList;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

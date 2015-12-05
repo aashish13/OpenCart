@@ -5,7 +5,7 @@
  */
 package com.opencart.dao;
 
-import com.opencart.models.AppConfig;
+import com.opencart.entity.AppConfig;
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
