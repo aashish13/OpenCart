@@ -22,17 +22,18 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "products")
 public class Product {
-  @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "products_seq_gen")
-    @SequenceGenerator(name="products_seq_gen",sequenceName="PRODUCT_SEQ")
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "products_seq_gen")
+    @SequenceGenerator(name = "products_seq_gen", sequenceName = "PRODUCT_SEQ")
     private int product_id;
 
     private String name;
-//        @ManyToOne(fetch = FetchType.LAZY)
+//    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "category_id")
 //    private Category category;
 
-     @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subcategory_id")
     private SubCategory subCategory;
 
@@ -61,6 +62,7 @@ public class Product {
     public void setDetails(String details) {
         this.details = details;
     }
+
     public void setSubCategory(SubCategory subCategory) {
         this.subCategory = subCategory;
     }
@@ -68,5 +70,5 @@ public class Product {
     public SubCategory getSubCategory() {
         return subCategory;
     }
-    
+
 }

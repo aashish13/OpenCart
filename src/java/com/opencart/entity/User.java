@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import org.hibernate.annotations.Type;
 
 /**
  *
@@ -26,9 +27,12 @@ public class User {
     private String firstname;
     private String lastname;
     private String email;
-    private boolean isadmin;
-    private boolean iscms;
-    private boolean isoms;
+    @Type(type = "true_false")
+    private Boolean isAdmin;
+    @Type(type = "true_false")
+    private Boolean isOms;
+    @Type(type = "true_false")
+    private Boolean isCms;
 
     public int getId() {
         return id;
@@ -78,28 +82,30 @@ public class User {
         this.email = email;
     }
 
-    public boolean isIsadmin() {
-        return isadmin;
+    public Boolean getIsAdmin() {
+        return isAdmin;
     }
 
-    public void setIsadmin(boolean isadmin) {
-        this.isadmin = isadmin;
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
-    public boolean isIscms() {
-        return iscms;
+    public Boolean getIsOms() {
+        return isOms;
     }
 
-    public void setIscms(boolean iscms) {
-        this.iscms = iscms;
+    public void setIsOms(Boolean isOms) {
+        this.isOms = isOms;
     }
 
-    public boolean isIsoms() {
-        return isoms;
+    public Boolean getIsCms() {
+        return isCms;
     }
 
-    public void setIsoms(boolean isoms) {
-        this.isoms = isoms;
+    public void setIsCms(Boolean isCms) {
+        this.isCms = isCms;
     }
+    
+    
+   
 }
-
