@@ -28,7 +28,7 @@ public class Order {
     @SequenceGenerator(name="orders_seq_gen",sequenceName="ORDERS_SEQ")
     private int order_id;
     
-    @ManyToOne
+    @OneToMany
     private Status status;
 
     public int getOrder_id() {
