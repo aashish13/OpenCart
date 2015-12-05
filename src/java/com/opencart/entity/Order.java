@@ -5,6 +5,7 @@
  */
 package com.opencart.entity;
 
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,6 +29,9 @@ public class Order {
     @SequenceGenerator(name="orders_seq_gen",sequenceName="ORDERS_SEQ")
     private int order_id;
     
+    @OneToMany(targetEntity = ProductOrder.class,mappedBy = "order")
+    private Set<ProductOrder> product_orders;
+       
     @ManyToOne
     private Status status;
 
