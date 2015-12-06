@@ -11,7 +11,11 @@ import com.opencart.service.AppConfigService;
 import com.opencart.service.CategoryService;
 import com.opencart.service.ProductService;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.opencart.service.SubCategoryService;
+=======
+import com.opencart.service.PromotionService;
+>>>>>>> origin/master
 =======
 import com.opencart.service.PromotionService;
 >>>>>>> origin/master
@@ -37,10 +41,13 @@ public class AdminController {
     private ProductService productService;
     @Autowired
 <<<<<<< HEAD
+<<<<<<< HEAD
     private SubCategoryService subcategoryService;
     @Autowired
     private CategoryService categoryService;
 =======
+=======
+>>>>>>> origin/master
     private PromotionService promotionService;
     
 >>>>>>> origin/master
@@ -133,6 +140,31 @@ public class AdminController {
         return new ModelAndView("admin/subcategory");
     }    
 =======
+        return new ModelAndView("admin/promotion");
+    }
+    
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
+    @RequestMapping(value = "/admin/promotions")
+    public ModelAndView showPromotionsGet(HttpServletRequest request,HttpServletResponse response){
+        String action=(String)request.getParameter("action");
+        if(action.equals("viewall")){
+                List<Promotion> promotions=promotionService.list();
+                ModelAndView mv=new ModelAndView("admin/promotion","promotions",promotions);
+                return mv;
+        }
+        else if(action.equals("add")){
+            request.setAttribute("action", "add");
+            ModelAndView mv=new ModelAndView("admin/promotion");
+            return mv;
+        }
+        else if(action.equals("delete")){
+            
+        }
+        else if(action.equals("edit")){
+            
+        }
         return new ModelAndView("admin/promotion");
     }
     
