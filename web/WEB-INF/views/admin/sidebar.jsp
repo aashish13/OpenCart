@@ -16,9 +16,9 @@
                     <i class="icon-check"></i> Address
                 </a>
             </li>
-            <li><a href="/OpenCart/admin/category?action=viewall" data-filter=""><i class="icon-check"></i> Category</a></li>
+            <li><a href="/OpenCart/admin/category/all" data-filter=""><i class="icon-check"></i> Category</a></li>
             <li><a href="/OpenCart/admin/subcategory?action=viewall" data-filter=""><i class="icon-check"></i>Sub Category</a></li>
-            <li><a href="/OpenCart/admin/categories?action=viewall" data-filter=""><i class="icon-check"></i> Order</a></li>
+            <li><a href="/OpenCart/admin/order?action=viewall" data-filter=""><i class="icon-check"></i> Order</a></li>
             <li><a href="/OpenCart/admin/products?action=viewall" data-filter=""><i class="icon-check"></i> Product</a></li>
         </ul>
     </div>
