@@ -13,6 +13,7 @@
             <li><a href="subcategory?action=viewall" data-filter=""><i class="icon-check"></i>Sub Category</a></li>
             <li><a href="categories?action=viewall" data-filter=""><i class="icon-check"></i> Order</a></li>
             <li><a href="products?action=viewall" data-filter=""><i class="icon-check"></i> Product</a></li>
+            <li><a href="/OpenCart/admin/promotions?action=viewall" data-filter=""><i class="icon-check"></i> Promotion</a></li>
         </ul>
     </div>
 </div>
