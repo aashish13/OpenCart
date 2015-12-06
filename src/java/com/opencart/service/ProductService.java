@@ -13,7 +13,7 @@ import com.opencart.entity.Product;
  * @author Aashish
  */
 public interface ProductService {
-    public void addProduct(Product product);
-    public void removeProduct(Product product);
+    public void add(Product product);
+    public void remove(Product product);
     public List<Product> list();
 }

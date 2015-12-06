@@ -12,8 +12,8 @@ import java.util.List;
  * @author Bangalore-pc
  */
 public interface ProductDao {
-    public void addProduct(Product product);
-    public void removeProduct(Product product);
-    public List<Product> getAllProducts();
+    public void add(Product product);
+    public void remove(Product product);
+    public List<Product> list();
     
 }

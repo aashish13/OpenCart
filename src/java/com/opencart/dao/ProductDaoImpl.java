@@ -27,17 +27,17 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public void addProduct(Product product) {
+    public void add(Product product) {
         getCurrentSession().save(product);
     }
 
     @Override
-    public void removeProduct(Product product) {
+    public void remove(Product product) {
         getCurrentSession().delete(product);
     }
     
     @SuppressWarnings("unchecked")
-    public List<Product> getAllProducts() {
+    public List<Product> list() {
        return getCurrentSession().createQuery("From Product").list();
     }
     

@@ -23,15 +23,15 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public void addProduct(Product product) {
-        productDao.addProduct(product);
+    public void add(Product product) {
+        productDao.add(product);
     }
     @Override
-    public void removeProduct(Product product) {
-        productDao.removeProduct(product);
+    public void remove(Product product) {
+        productDao.remove(product);
     }
     @Override
     public List<Product> list() {
-        return productDao.getAllProducts();
+        return productDao.list();
     }
 }

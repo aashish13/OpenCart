@@ -10,15 +10,7 @@ import com.opencart.entity.*;
 import com.opencart.service.AppConfigService;
 import com.opencart.service.CategoryService;
 import com.opencart.service.ProductService;
-<<<<<<< HEAD
-<<<<<<< HEAD
 import com.opencart.service.SubCategoryService;
-=======
-import com.opencart.service.PromotionService;
->>>>>>> origin/master
-=======
-import com.opencart.service.PromotionService;
->>>>>>> origin/master
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,17 +32,9 @@ public class AdminController {
     @Autowired
     private ProductService productService;
     @Autowired
-<<<<<<< HEAD
-<<<<<<< HEAD
     private SubCategoryService subcategoryService;
     @Autowired
     private CategoryService categoryService;
-=======
-=======
->>>>>>> origin/master
-    private PromotionService promotionService;
-    
->>>>>>> origin/master
     
     
     @RequestMapping(value="/admin",method=RequestMethod.GET)
@@ -80,54 +64,20 @@ public class AdminController {
         ModelAndView mv=new ModelAndView("admin/app_config?action=showone");
         return mv;
     }
-    @RequestMapping(value = "/admin/products")
-    public ModelAndView showProductsGet(HttpServletRequest request,HttpServletResponse response){
-        String action=(String)request.getParameter("action");
-        if(action.equals("viewall")){
-                List<Product> products=productService.list();
-                ModelAndView mv=new ModelAndView("admin/product","products",products);
-                return mv;
-        }
-        else if(action.equals("add")){
-            request.setAttribute("action", "add");
-            ModelAndView mv=new ModelAndView("admin/product");
-            return mv;
-        }
-        else if(action.equals("delete")){
-            
-        }
-        else if(action.equals("edit")){
-            
-        }
-        return new ModelAndView("admin/product");
-    }
-<<<<<<< HEAD
+    
 @RequestMapping(value = "/admin/subcategory")
     public ModelAndView showSubCategoryGet(HttpServletRequest request,HttpServletResponse response){
         String action=(String)request.getParameter("action");
         if(action.equals("viewall")){
                 List<SubCategory> subcategory=subcategoryService.list();
                 ModelAndView mv=new ModelAndView("admin/subcategory","subcategory",subcategory);
-=======
-    
-    @RequestMapping(value = "/admin/promotions")
-    public ModelAndView showPromotionsGet(HttpServletRequest request,HttpServletResponse response){
-        String action=(String)request.getParameter("action");
-        if(action.equals("viewall")){
-                List<Promotion> promotions=promotionService.list();
-                ModelAndView mv=new ModelAndView("admin/promotion","promotions",promotions);
->>>>>>> origin/master
                 return mv;
         }
         else if(action.equals("add")){
             request.setAttribute("action", "add");
-<<<<<<< HEAD
             ModelAndView mv=new ModelAndView("admin/subcategory");
             mv.addObject("categories",categoryService.list());
             mv.addObject("subcategory",new SubCategory());
-=======
-            ModelAndView mv=new ModelAndView("admin/promotion");
->>>>>>> origin/master
             return mv;
         }
         else if(action.equals("delete")){
@@ -136,37 +86,6 @@ public class AdminController {
         else if(action.equals("edit")){
             
         }
-<<<<<<< HEAD
         return new ModelAndView("admin/subcategory");
     }    
-=======
-        return new ModelAndView("admin/promotion");
-    }
-    
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
-    @RequestMapping(value = "/admin/promotions")
-    public ModelAndView showPromotionsGet(HttpServletRequest request,HttpServletResponse response){
-        String action=(String)request.getParameter("action");
-        if(action.equals("viewall")){
-                List<Promotion> promotions=promotionService.list();
-                ModelAndView mv=new ModelAndView("admin/promotion","promotions",promotions);
-                return mv;
-        }
-        else if(action.equals("add")){
-            request.setAttribute("action", "add");
-            ModelAndView mv=new ModelAndView("admin/promotion");
-            return mv;
-        }
-        else if(action.equals("delete")){
-            
-        }
-        else if(action.equals("edit")){
-            
-        }
-        return new ModelAndView("admin/promotion");
-    }
-    
->>>>>>> origin/master
 }
