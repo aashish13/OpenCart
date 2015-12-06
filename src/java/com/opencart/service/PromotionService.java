@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.opencart.dao;
+package com.opencart.service;
 
 import com.opencart.entity.Promotion;
 import java.util.List;
@@ -12,11 +12,10 @@ import java.util.List;
  *
  * @author Bangalore-pc
  */
-public interface PromotionDao {
-    
+
+public interface PromotionService {
     public void addPromotion(Promotion promotion);
     public void removePromotion(Promotion promotion);
-    public List<Promotion> getAllPromotions();
-    
+    public List<Promotion> list();
     
 }

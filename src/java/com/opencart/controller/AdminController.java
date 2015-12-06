@@ -9,6 +9,7 @@ import com.opencart.dao.AppConfigDao;
 import com.opencart.entity.*;
 import com.opencart.service.AppConfigService;
 import com.opencart.service.ProductService;
+import com.opencart.service.PromotionService;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,6 +30,8 @@ public class AdminController {
     private AppConfigService appConfigService;
     @Autowired
     private ProductService productService;
+    @Autowired
+    private PromotionService promotionService;
     
     
     
@@ -79,6 +82,28 @@ public class AdminController {
             
         }
         return new ModelAndView("admin/product");
+    }
+    
+    @RequestMapping(value = "/admin/promotions")
+    public ModelAndView showPromotionsGet(HttpServletRequest request,HttpServletResponse response){
+        String action=(String)request.getParameter("action");
+        if(action.equals("viewall")){
+                List<Promotion> promotions=promotionService.list();
+                ModelAndView mv=new ModelAndView("admin/promotion","promotions",promotions);
+                return mv;
+        }
+        else if(action.equals("add")){
+            request.setAttribute("action", "add");
+            ModelAndView mv=new ModelAndView("admin/promotion");
+            return mv;
+        }
+        else if(action.equals("delete")){
+            
+        }
+        else if(action.equals("edit")){
+            
+        }
+        return new ModelAndView("admin/promotion");
     }
     
 }
