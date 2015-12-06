@@ -29,7 +29,7 @@ public class SubCategory {
     @SequenceGenerator(name="sub_categories_seq_gen",sequenceName="SUB_CATEGORY_SEQ")
     private int id;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
     private Category category;
     

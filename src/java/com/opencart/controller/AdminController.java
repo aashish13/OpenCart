@@ -8,7 +8,9 @@ package com.opencart.controller;
 import com.opencart.dao.AppConfigDao;
 import com.opencart.entity.*;
 import com.opencart.service.AppConfigService;
+import com.opencart.service.CategoryService;
 import com.opencart.service.ProductService;
+import com.opencart.service.SubCategoryService;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +31,10 @@ public class AdminController {
     private AppConfigService appConfigService;
     @Autowired
     private ProductService productService;
-    
+    @Autowired
+    private SubCategoryService subcategoryService;
+    @Autowired
+    private CategoryService categoryService;
     
     
     @RequestMapping(value="/admin",method=RequestMethod.GET)
@@ -80,5 +85,27 @@ public class AdminController {
         }
         return new ModelAndView("admin/product");
     }
-    
+@RequestMapping(value = "/admin/subcategory")
+    public ModelAndView showSubCategoryGet(HttpServletRequest request,HttpServletResponse response){
+        String action=(String)request.getParameter("action");
+        if(action.equals("viewall")){
+                List<SubCategory> subcategory=subcategoryService.list();
+                ModelAndView mv=new ModelAndView("admin/subcategory","subcategory",subcategory);
+                return mv;
+        }
+        else if(action.equals("add")){
+            request.setAttribute("action", "add");
+            ModelAndView mv=new ModelAndView("admin/subcategory");
+            mv.addObject("categories",categoryService.list());
+            mv.addObject("subcategory",new SubCategory());
+            return mv;
+        }
+        else if(action.equals("delete")){
+            
+        }
+        else if(action.equals("edit")){
+            
+        }
+        return new ModelAndView("admin/subcategory");
+    }    
 }
