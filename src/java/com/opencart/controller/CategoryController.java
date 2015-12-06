@@ -31,25 +31,41 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
     
-    @RequestMapping(value = "/category",method = RequestMethod.GET)
+    @RequestMapping(value = "/category/all",method = RequestMethod.GET)
     public ModelAndView categoryGet(HttpServletRequest request,HttpServletResponse response){
-        
-        String action=(String)request.getParameter("action");
-        if(action.equals("viewall")){
-                List<Category> categories=categoryService.list();
-                ModelAndView mv=new ModelAndView("admin/category","category",categories);
-                return mv;
-        }
-        
-        //show all author
-        ModelAndView mv=new ModelAndView("admin/category");
-        mv.addObject(new Category());
+        List<Category> categories=categoryService.list();
+        ModelAndView mv=new ModelAndView("admin/category","categories",categories);
         return mv;
     }
-    @RequestMapping(value = "/category",method = RequestMethod.POST)
-    public ModelAndView categoryPost(@Valid @ModelAttribute Category category,BindingResult result){
-        //show all author
-        return new ModelAndView("admin/category");
+    
+    @RequestMapping(value = "/category/add",method = RequestMethod.GET)
+    public ModelAndView addCategory(){
+        return new ModelAndView("admin/addcategory","category",new Category());
+    }
+            
+    
+    @RequestMapping(value = "/category/add",method = RequestMethod.POST)
+    public ModelAndView categoryPost(@Valid @ModelAttribute Category category,BindingResult result,
+            HttpServletRequest request,HttpServletResponse response){
+        if(result.hasErrors()){
+            return new ModelAndView("admin/addcategory");
+        }
+        else{
+            categoryService.add(category);
+            String action=(String)request.getParameter("action");
+            System.out.println("Action -->"+action);
+            List<Category> categories=categoryService.list();
+            ModelAndView mv=new ModelAndView("admin/category","categories",categories);
+            return mv;
+        }
+    }
+    
+    @RequestMapping(value = "/category/delete",method = RequestMethod.GET)
+    public ModelAndView deleteCategory(HttpServletRequest request){
+        int id=Integer.parseInt(request.getParameter("id").toString());
+        categoryService.delete(id);
+        List<Category> categories=categoryService.list();
+        return new ModelAndView("admin/category","categories",categories);
     }
             
     
