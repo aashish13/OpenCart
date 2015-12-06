@@ -5,10 +5,16 @@
  */
 package com.opencart.dao;
 
+import com.opencart.entity.Category;
+import java.util.List;
+
 /**
  *
  * @author Aashish
  */
 public interface CategoryDao {
-    
+    public void addCategory(Category category);
+    public void deleteCategory(int id);
+    public Category getCategory(int id);
+    public List<Category> list();
 }

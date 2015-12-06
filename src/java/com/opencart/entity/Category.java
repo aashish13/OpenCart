@@ -13,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -24,6 +26,8 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "categories_seq_gen")
     @SequenceGenerator(name="categories_seq_gen",sequenceName="CATEGORY_SEQ")
     private int id;
+    
+    @Size(min = 5,max=20,message = "Category must be 5 to 20 character long") @NotEmpty(message = "Category can not be empty.")
     private String category;
     
     @OneToMany(targetEntity = SubCategory.class,mappedBy = "category")

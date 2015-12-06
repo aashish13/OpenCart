@@ -9,10 +9,11 @@
     <title>Open Cart</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <script src="<%=request.getContextPath()%>/js/jquery-1.11.3.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
     <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/main.js"></script>
     <link href="<%=request.getContextPath()%>/style/bootstrap.min.css" rel="stylesheet" >
-    <link href="<%=request.getContextPath()%>/style/main.css" rel="stylesheet" >
+    <link href="<%=request.getContextPath()%>/style/styles.css" rel="stylesheet" >
 </head>
 <body>
 <header>
