@@ -17,10 +17,11 @@
             <jsp:include page="sidebar.jsp" />
             <div class="col-lg-9">
                 <div  class="row">
-                    <a href="appconf?action=add" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Records</a><br/><br/>
 
                     <c:choose>
                         <c:when test="${param.action eq 'viewall'}">
+                            <a href="products?action=add" class="btn btn-large btn-info">
+                                <i class="glyphicon glyphicon-plus"></i> &nbsp; Add Products</a><br/><br/>
                             <table class="table table-hover">
                                 <tr>
                                     <th>#</th>
@@ -47,7 +48,7 @@
 
                         </c:when>
                         <c:when test="${param.action eq 'add'}">
-                            <sf:form>
+                            <h1>Add Products Here :-</h1>
                         </c:when>
                     </c:choose>
 

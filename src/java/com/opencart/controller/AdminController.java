@@ -61,14 +61,15 @@ public class AdminController {
     }
     @RequestMapping(value = "/admin/products")
     public ModelAndView showProductsGet(HttpServletRequest request,HttpServletResponse response){
-        String action=(String)request.getAttribute("action");
+        String action=(String)request.getParameter("action");
         if(action.equals("viewall")){
                 List<Product> products=productService.list();
                 ModelAndView mv=new ModelAndView("admin/product","products",products);
                 return mv;
         }
         else if(action.equals("add")){
-            ModelAndView mv=new ModelAndView("admin/product?action=add");
+            request.setAttribute("action", "add");
+            ModelAndView mv=new ModelAndView("admin/product");
             return mv;
         }
         else if(action.equals("delete")){
@@ -77,7 +78,7 @@ public class AdminController {
         else if(action.equals("edit")){
             
         }
-        return null;
+        return new ModelAndView("admin/product");
     }
     
 }
