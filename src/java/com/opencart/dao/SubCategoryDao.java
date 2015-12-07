@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface SubCategoryDao {
        public void addSubCategory(SubCategory subcategory);
-    public void removeSubCategory(SubCategory subcategory);
+    public void remove(int id);
     public List<SubCategory> getAllSubCategory();
  
 }

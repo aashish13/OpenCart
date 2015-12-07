@@ -31,8 +31,8 @@ public class SubCategoryDaoImpl implements SubCategoryDao {
     }
 
     @Override
-    public void removeSubCategory(SubCategory subcategory) {
-        getCurrentSession().delete(subcategory);
+    public void remove(int id) {
+        getCurrentSession().delete(id);
     }
     
     @SuppressWarnings("unchecked")

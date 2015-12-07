@@ -86,24 +86,38 @@ public class AdminController {
         ModelAndView mv=new ModelAndView("admin/subcategory","subCategory",subcategory);
         return mv;
     }
-   @RequestMapping(value = "/admin/subcategory/add",method = RequestMethod.GET)
-    public ModelAndView addSubCategory(){
+    @RequestMapping(value = "/admin/subcategory/add",method = RequestMethod.GET)
+    public ModelAndView addSubCategory(@ModelAttribute("subCategory") SubCategory subCategory){
         ModelAndView mv=new ModelAndView("admin/addsubcategory");
-        mv.addObject("subCategory",new SubCategory());
+        mv.addObject("subCategory",subCategory);
         mv.addObject("categories",categoryService.list());
         return mv;
     }
-    @RequestMapping(value = "/admin/subcategory/add",method = RequestMethod.POST)
-    public ModelAndView categoryPost(@Valid @ModelAttribute("subCategory") SubCategory subCategory,BindingResult result,
+     @RequestMapping(value = "/admin/subcategory/add",method = RequestMethod.POST)
+    public ModelAndView categoryPost(@Valid @ModelAttribute("subCategory") String subCategoryStr,
+            @Valid @ModelAttribute("category") int categoryId,
+            BindingResult result,
             HttpServletRequest request,HttpServletResponse response){
         if(result.hasErrors()){
             return new ModelAndView("admin/addsubcategory","categories",categoryService.list());
         }
         else{
+            Category category = categoryService.get(categoryId);
+            SubCategory subCategory = new SubCategory();
+            subCategory.setSubCategory(subCategoryStr);
+            subCategory.setCategory(category);
             subcategoryService.addSubCategory(subCategory);
             List<SubCategory> subcategory=subcategoryService.list();
             ModelAndView mv=new ModelAndView("admin/subcategory","subCategory",subcategory);
             return mv;
         }
+    }
+    @RequestMapping(value = "/subcategory/delete",method = RequestMethod.GET)
+    public ModelAndView deleteCategory(HttpServletRequest request){
+        int id=Integer.parseInt(request.getParameter("id").toString());
+        //subcategoryService.removeSubcategory(id);
+        List<SubCategory> subcategory=subcategoryService.list();
+        ModelAndView mv=new ModelAndView("admin/subcategory","subCategory",subcategory);
+        return mv;
     }
 }
