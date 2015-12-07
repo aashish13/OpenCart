@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class SubCategoryImpl implements SubCategoryService{
+public class SubCategoryServiceImpl implements SubCategoryService{
     @Autowired
     private SubCategoryDao subCategoryDao;
 

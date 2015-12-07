@@ -20,36 +20,46 @@
                 <div  class="row">
 
                 </div>
-                <h3>Add Sub Category Here :-</h3>
-                <sf:form method="POST"  commmandName="subcategory" action="/OpenCart/admin/subcategory/add" class="form-horizontal" action="/OpenCart/admin/subcategory/add">
+                <h3>Add Sub Category Here </h3>
+                <sf:form action="/OpenCart/admin/subcategory/add" method="Post" commandName="subCategory">
+                    
                     <table>
-                        <tr>
-                        <div class="form-group">
-                            <label for="category" class="col-sm-2 control-label">Category</label>
-                            <div class="col-sm-3">
-                                <sf:select path="categories" cssClass="form-control">
-                                    <sf:options items="${categories}" itemValue="id" itemLabel="category" />
-                                </sf:select>
-
-                            </div>
-                        </div></br></tr>
-                        <tr>
-                        <div class="form-group">
-                            <label for="subcategory" class="col-sm-2 control-label">Sub Category</label>
-                            <div class="col-sm-2">
-                                <sf:input path="subcategory" id="subcategory" ></sf:input>
-                                <sf:errors path="subcategory" cssClass="error" ></sf:errors>
-
-                                </div>
-                            </div>
-                            </tr>                        
-                                <button type="submit" value="add" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Records</a>
+                            <sf:hidden path="id" />
                             <tr>
-                            </sf:form>
+                                <td>Sub Category</td>
+                                <td>
+                                    <sf:input path="subCategory" ></sf:input>
+                                </td>
+                                <td>
+                                    <sf:errors path="subCategory" cssClass="error" ></sf:errors>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Category
+                                </td>
+                                <td>
+                                    <sf:select path="category">
+                                        <sf:option value="" label="--- Select ---"/>
+                                        <sf:options title="Select Category" items="${categories}" itemLabel="category" itemValue="id"  />
+                                    </sf:select>
+                                    
+                                </td>
+                                <td>
+                                    <sf:errors path="category" cssClass="error" ></sf:errors>
+                                </td>
+
+                            </tr>
+                            <tr><td></td><td></td></tr>
+                            <tr><td></td><td></td></tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" value="Add " class=" btn-sm btn-info" />
+                                </td>
+                            </tr>
                             </table>
-                        </br></br></br></br><tr>
-                        </tr>
-                        <!--                            </table>-->
-
-
-                        </html>
+                </sf:form>
+            </div>
+        </div>
+</html>
