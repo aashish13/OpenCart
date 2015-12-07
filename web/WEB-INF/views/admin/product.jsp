@@ -18,14 +18,14 @@
             <div class="col-lg-9">
                 <div  class="row">
 
-                    <a href="products?action=add" class="btn btn-large btn-info">
+                    <a href="/OpenCart/admin/product/add" class="btn btn-large btn-info">
                         <i class="glyphicon glyphicon-plus"></i> &nbsp; Add Products</a><br/><br/>
                     <table class="table table-hover">
                         <tr>
                             <th>#</th>
                             <th>Detail</th>
                             <th>Name </th>
-                            <th>SubCategory</th>
+                            <th>Sub Category</th>
                             <th>Category</th>
                             <th>Action</th>
                         </tr>
@@ -37,7 +37,7 @@
                                 <td>${product.subCategory.subCategory}</td>
                                 <td>${product.subCategory.category.category}</td>
                                 <td>
-                                    <a href="products?action=delete&id=${product.product_id}" class="btn btn-danger">Delete</a></td>
+                                    <a href="/OpenCart/admin/product/delete?id=${product.product_id}" class="btn btn-danger">Delete</a></td>
                             </tr>
                         </c:forEach>
                     </table>

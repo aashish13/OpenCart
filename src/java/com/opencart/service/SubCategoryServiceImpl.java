@@ -28,12 +28,15 @@ public class SubCategoryServiceImpl implements SubCategoryService{
         subCategoryDao.addSubCategory(subcategory);
     }
     @Override
-    public void removeSubcategory(SubCategory subcategory) {
-        subCategoryDao.removeSubCategory(subcategory);
+    public void remove(int id) {
+        subCategoryDao.remove(id);
     }
     @Override
     public List<SubCategory> list() {
         return subCategoryDao.getAllSubCategory();
     }
-    
+    @Override
+    public SubCategory getById(int id) {
+        return subCategoryDao.getById(id);
+    }
 }

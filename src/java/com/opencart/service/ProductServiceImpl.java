@@ -27,8 +27,12 @@ public class ProductServiceImpl implements ProductService {
         productDao.add(product);
     }
     @Override
-    public void remove(Product product) {
-        productDao.remove(product);
+    public void remove(int id) {
+        productDao.remove(id);
+    }
+    @Override
+    public Product getById(int id) {
+        return productDao.getById(id);
     }
     @Override
     public List<Product> list() {

@@ -6,6 +6,7 @@
 package com.opencart.dao;
 
 import com.opencart.entity.Product;
+import com.opencart.entity.SubCategory;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -32,8 +33,17 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public void remove(Product product) {
-        getCurrentSession().delete(product);
+    public Product getById(int id) {
+        Product product=(Product) getCurrentSession().get(Product.class, id);
+        return product;
+    }
+    
+
+    @Override
+    public void remove(int id) {
+        Product product=getById(id);
+        if(product!=null)
+            getCurrentSession().delete(product);
     }
     
     @SuppressWarnings("unchecked")

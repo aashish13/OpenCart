@@ -33,7 +33,7 @@
                                 <td>${sub.subCategory}</td>
 
                                 <td>    
-                                    <a href="/OpenCart/admin/subcategory/delete/id=${sub.id}" class="btn btn-danger">Delete</a></td>
+                                    <a href="/OpenCart/admin/subcategory/delete?id=${sub.id}" class="btn btn-danger">Delete</a></td>
                             </tr>
                         </c:forEach>
                     </table>

@@ -14,6 +14,7 @@ import java.util.List;
  */
 public interface SubCategoryService {
      public void addSubCategory(SubCategory subcategory);
-    public void removeSubcategory(SubCategory subcategory);
+    public void remove(int id);
+    public SubCategory getById(int id);
     public List<SubCategory> list();
 }

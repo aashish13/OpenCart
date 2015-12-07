@@ -5,6 +5,7 @@
  */
 package com.opencart.dao;
 
+import com.opencart.entity.Category;
 import com.opencart.entity.SubCategory;
 import java.util.List;
 import org.hibernate.Session;
@@ -18,6 +19,12 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class SubCategoryDaoImpl implements SubCategoryDao {
+
+    @Override
+    public SubCategory getById(int id) {
+        SubCategory subCategory=(SubCategory) getCurrentSession().get(SubCategory.class, id);
+        return subCategory;
+    }
     @Autowired
     private SessionFactory sessionFactory;
     
@@ -32,12 +39,15 @@ public class SubCategoryDaoImpl implements SubCategoryDao {
 
     @Override
     public void remove(int id) {
-        getCurrentSession().delete(id);
+        SubCategory sc=getById(id);
+        if(sc!=null)
+            getCurrentSession().delete(sc);
     }
     
     @SuppressWarnings("unchecked")
     public List<SubCategory> getAllSubCategory() {
        return getCurrentSession().createQuery("From sub_categories").list();
     }
+    
     
 }
