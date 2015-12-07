@@ -39,7 +39,7 @@ public class SpringConfigurations extends WebMvcConfigurerAdapter{
         
         datasource.setDriverClassName("oracle.jdbc.OracleDriver");
         datasource.setUrl("jdbc:oracle:thin:@dilbert.humber.ca:1521:grok");
-        datasource.setUsername("n01043708");
+        datasource.setUsername("n01072473");
         datasource.setPassword("oracle");
         return datasource;
     }
