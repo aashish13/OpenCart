@@ -31,7 +31,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "products_seq_gen")
     @SequenceGenerator(name = "products_seq_gen", sequenceName = "PRODUCT_SEQ")
-    private int product_id;
+    private Long id;
 
     @NotEmpty(message = "Product Name can not be empty")
     private String name;
@@ -50,19 +50,16 @@ public class Product {
     @NotEmpty(message = "Product Details can not be empty")
     private String details;
     
-    private String img;
-
     @OneToMany(targetEntity = ProductReview.class,mappedBy = "product")
     private Set<ProductReview> product_reviews;
 
-    public int getProduct_id() {
-        return product_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    public void setId(Long id) {
+        this.id = id;
     }
-
 
     public String getName() {
         return name;
@@ -96,14 +93,6 @@ public class Product {
 
     public void setPromotions(Set<Promotion> promotions) {
         this.promotions = promotions;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
     }
 
     public Set<ProductReview> getProduct_reviews() {

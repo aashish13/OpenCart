@@ -25,7 +25,7 @@ public class ProductOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "product_orders_seq_gen")
     @SequenceGenerator(name="product_orders_seq_gen",sequenceName="PRODUCT_ORDERS_SEQ")
-    private int product_order_id;
+    private int id;
  
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
@@ -33,13 +33,15 @@ public class ProductOrder {
     
     private double price;
 
-    public int getProduct_order_id() {
-        return product_order_id;
+    public int getId() {
+        return id;
     }
 
-    public void setProduct_order_id(int product_order_id) {
-        this.product_order_id = product_order_id;
+    public void setId(int id) {
+        this.id = id;
     }
+
+  
 
     public Order getOrder() {
         return order;

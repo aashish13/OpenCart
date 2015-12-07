@@ -23,15 +23,15 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public void add(Product product) {
-        productDao.add(product);
+    public Long add(Product product) {
+        return productDao.add(product);
     }
     @Override
-    public void remove(int id) {
+    public void remove(Long id) {
         productDao.remove(id);
     }
     @Override
-    public Product getById(int id) {
+    public Product getById(Long id) {
         return productDao.getById(id);
     }
     @Override

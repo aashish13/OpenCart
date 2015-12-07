@@ -31,13 +31,13 @@
                         </tr>
                         <c:forEach var="product" items="${products}">
                             <tr>
-                                <td><c:out value="${product.product_id}" /></td>
+                                <td><c:out value="${product.id}" /></td>
                                 <td>${product.details}</td>
                                 <td>${product.name}</td>
                                 <td>${product.subCategory.subCategory}</td>
                                 <td>${product.subCategory.category.category}</td>
                                 <td>
-                                    <a href="/OpenCart/admin/product/delete?id=${product.product_id}" class="btn btn-danger">Delete</a></td>
+                                    <a href="/OpenCart/admin/product/delete?id=${product.id}" class="btn btn-danger">Delete</a></td>
                             </tr>
                         </c:forEach>
                     </table>

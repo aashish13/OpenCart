@@ -26,19 +26,21 @@ public class Promotion {
   @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "promotions_seq_gen")
     @SequenceGenerator(name="promotions_seq_gen",sequenceName="PROMOTION_SEQ")
-    private int promotion_id;
+    private int id;
     private String promotion_description;
      @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
 
-    public int getPromotion_id() {
-        return promotion_id;
+    public int getId() {
+        return id;
     }
 
-    public void setPromotion_id(int promotion_id) {
-        this.promotion_id = promotion_id;
+    public void setId(int id) {
+        this.id = id;
     }
+
+   
 
     public String getPromotion_description() {
         return promotion_description;

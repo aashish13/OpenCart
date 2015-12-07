@@ -12,9 +12,9 @@ import java.util.List;
  * @author Bangalore-pc
  */
 public interface ProductDao {
-    public void add(Product product);
-    public void remove(int id);
-    public Product getById(int id);
+    public Long add(Product product);
+    public void remove(Long id);
+    public Product getById(Long id);
     public List<Product> list();
     
 }

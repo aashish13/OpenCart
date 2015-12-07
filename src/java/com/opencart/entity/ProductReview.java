@@ -26,20 +26,22 @@ public class ProductReview {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "products_seq_gen")
     @SequenceGenerator(name="products_seq_gen",sequenceName="PRODUCT_SEQ")
-    private int review_id;
+    private int id;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
      
     private String productReview;    
 
-    public int getReview_id() {
-        return review_id;
+    public int getId() {
+        return id;
     }
 
-    public void setReview_id(int review_id) {
-        this.review_id = review_id;
+    public void setId(int id) {
+        this.id = id;
     }
+
+    
 
     public Product getProduct() {
         return product;

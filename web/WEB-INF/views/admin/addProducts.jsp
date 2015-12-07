@@ -24,7 +24,7 @@
                 <sf:form action="/OpenCart/admin/product/add" method="Post" commandName="product">
                     
                     <table>
-                            <sf:hidden path="product_id" />
+                            <sf:hidden path="id" />
                             
                             <tr>
                                 <td>Product Name</td>
@@ -44,15 +44,7 @@
                                     <sf:errors path="details" cssClass="error" ></sf:errors>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Image</td>
-                                <td>
-                                    <sf:input path="img" ></sf:input>
-                                </td>
-                                <td>
-                                    <sf:errors path="img" cssClass="error" ></sf:errors>
-                                </td>
-                            </tr>
+                            
                             <tr>
                                 <td>
                                     Sub Category

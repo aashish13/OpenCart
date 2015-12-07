@@ -28,19 +28,21 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public void add(Product product) {
-        getCurrentSession().save(product);
+    public Long add(Product product) {
+        Long id=(Long)getCurrentSession().save(product);
+        System.out.println("-----------------------------------------------Returned ID = "+id);
+        return id;
     }
 
     @Override
-    public Product getById(int id) {
-        Product product=(Product) getCurrentSession().get(Product.class, id);
+    public Product getById(Long product_id) {
+        Product product=(Product) getCurrentSession().get(Product.class, product_id);
         return product;
     }
     
 
     @Override
-    public void remove(int id) {
+    public void remove(Long id) {
         Product product=getById(id);
         if(product!=null)
             getCurrentSession().delete(product);

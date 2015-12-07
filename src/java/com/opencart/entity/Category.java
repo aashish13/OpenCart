@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,7 +34,7 @@ public class Category {
     @Size(min = 3,max=20,message = "Category must be 5 to 20 character long") @NotEmpty(message = "Category can not be empty.")
     private String category;
     
-    @OneToMany(targetEntity = SubCategory.class,mappedBy = "category")
+    @OneToMany(targetEntity = SubCategory.class,mappedBy = "category", fetch=FetchType.EAGER)
     private Set<SubCategory> subCategories;
 
 //        @OneToMany(targetEntity = Product.class,mappedBy = "product")

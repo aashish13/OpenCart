@@ -27,7 +27,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "orders_seq_gen")
     @SequenceGenerator(name="orders_seq_gen",sequenceName="ORDERS_SEQ")
-    private int order_id;
+    private int id;
     
     @OneToMany(targetEntity = ProductOrder.class,mappedBy = "order")
     private Set<ProductOrder> product_orders;
@@ -35,13 +35,23 @@ public class Order {
     @ManyToOne
     private Status status;
 
-    public int getOrder_id() {
-        return order_id;
+    public int getId() {
+        return id;
     }
 
-    public void setOrder_id(int order_id) {
-        this.order_id = order_id;
+    public void setId(int id) {
+        this.id = id;
     }
+
+    public Set<ProductOrder> getProduct_orders() {
+        return product_orders;
+    }
+
+    public void setProduct_orders(Set<ProductOrder> product_orders) {
+        this.product_orders = product_orders;
+    }
+
+   
 
     public Status getStatus() {
         return status;
