@@ -52,6 +52,9 @@ public class Product {
     
     @OneToMany(targetEntity = ProductReview.class,mappedBy = "product")
     private Set<ProductReview> product_reviews;
+    
+    @NotNull(message = "Price is a mandatory field")
+    private Double price;
 
     public Long getId() {
         return id;
@@ -102,4 +105,14 @@ public class Product {
     public void setProduct_reviews(Set<ProductReview> product_reviews) {
         this.product_reviews = product_reviews;
     }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+    
+    
 }

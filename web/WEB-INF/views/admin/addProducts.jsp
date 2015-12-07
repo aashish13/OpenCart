@@ -36,6 +36,15 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>Price</td>
+                                <td>
+                                    <sf:input path="price" ></sf:input>
+                                </td>
+                                <td>
+                                    <sf:errors path="price" cssClass="error" ></sf:errors>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>Details </td>
                                 <td>
                                     <sf:input path="details" ></sf:input>

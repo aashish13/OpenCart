@@ -25,15 +25,17 @@
                             <th>#</th>
                             <th>Detail</th>
                             <th>Name </th>
+                            <th>Price</th>
                             <th>Sub Category</th>
                             <th>Category</th>
                             <th>Action</th>
                         </tr>
                         <c:forEach var="product" items="${products}">
                             <tr>
-                                <td><c:out value="${product.id}" /></td>
+                                <td>${product.id}</td>
                                 <td>${product.details}</td>
                                 <td>${product.name}</td>
+                                <td>${product.price}</td>
                                 <td>${product.subCategory.subCategory}</td>
                                 <td>${product.subCategory.category.category}</td>
                                 <td>

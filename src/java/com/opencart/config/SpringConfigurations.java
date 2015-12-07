@@ -56,7 +56,7 @@ public class SpringConfigurations extends WebMvcConfigurerAdapter{
 
     public Properties hibProperties() {
         Properties properties=new Properties();
-        properties.put("hibernate.hbm2ddl.auto", "create-drop");
+        properties.put("hibernate.hbm2ddl.auto", "update");
         properties.put("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
         properties.put("hibernate.show_sql", "true");
         return properties;
