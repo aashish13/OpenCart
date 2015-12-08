@@ -28,7 +28,7 @@
          <li class="dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> ${category.category} <span class="caret"></span></a>
           <ul class="dropdown-menu">
           <c:forEach var="sub" items="${category.subCategories}">
-           <li> <a href="/OpenCart/addsubcategory"> ${sub.subCategory}</a> </li>
+           <li> <a href="/OpenCart/subcategory?id=${sub.id}"> ${sub.subCategory}</a> </li>
           </c:forEach>
       
          

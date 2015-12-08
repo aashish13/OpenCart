@@ -47,7 +47,7 @@
                             <tr>
                                 <td>Details </td>
                                 <td>
-                                    <sf:input path="details" ></sf:input>
+                                <sf:input path="details" maxlength="254"></sf:input>
                                 </td>
                                 <td>
                                     <sf:errors path="details" cssClass="error" ></sf:errors>

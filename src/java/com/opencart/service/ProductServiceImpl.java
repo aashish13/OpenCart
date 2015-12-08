@@ -38,4 +38,14 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> list() {
         return productDao.list();
     }
+
+    @Override
+    public List<Product> getBySubCategoryId(int id) {
+        return productDao.getBySubCategoryId(id);
+    }
+
+    @Override
+    public void update(Product product) {
+        productDao.update(product);
+    }
 }

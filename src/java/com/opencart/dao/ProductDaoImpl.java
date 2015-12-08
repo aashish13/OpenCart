@@ -30,8 +30,11 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public Long add(Product product) {
         Long id=(Long)getCurrentSession().save(product);
-        System.out.println("-----------------------------------------------Returned ID = "+id);
         return id;
+    }
+    @Override
+    public void update(Product product) {
+        getCurrentSession().save(product);
     }
 
     @Override
@@ -51,6 +54,11 @@ public class ProductDaoImpl implements ProductDao {
     @SuppressWarnings("unchecked")
     public List<Product> list() {
        return getCurrentSession().createQuery("From Product").list();
+    }
+    
+     @SuppressWarnings("unchecked")
+    public List<Product> getBySubCategoryId(int id) {
+       return getCurrentSession().createQuery("From Product where subCategory = "+id).list();
     }
     
 }

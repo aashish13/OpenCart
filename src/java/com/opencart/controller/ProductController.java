@@ -94,8 +94,12 @@ public class ProductController {
         if (!image.isEmpty()) {
             try {
                 File file = new File("c:/uploads/products/"+ id+"/"+image.getOriginalFilename());
+                
                 FileUtils.writeByteArrayToFile(file, image.getBytes());
-                //return " You successfully uploaded " + id + "! "+file.getPath();
+                Product product=productService.getById(Long.parseLong(id));
+                product.setImg(file.getName());
+                productService.update(product);
+                                            
                 List<Product> products=productService.list();
                 ModelAndView mv=new ModelAndView("admin/product","products",products);
                 return mv;
@@ -115,11 +119,13 @@ public class ProductController {
     @RequestMapping(value = "/product/delete",method = RequestMethod.GET)
     public ModelAndView deleteCategory(HttpServletRequest request) throws IOException{
         Long id=Long.parseLong(request.getParameter("id").toString());
+        Product product=productService.getById(id);
         File file = new File("c:/uploads/products/"+ id);
+        product.setImg(file.getName());
         FileUtils.deleteDirectory(file);
         productService.remove(id);
-        List<Product> subcategory=productService.list();
-        ModelAndView mv=new ModelAndView("admin/subcategory","subCategory",subcategory);
+        List<Product> products=productService.list();
+        ModelAndView mv=new ModelAndView("admin/product","products",products);
         return mv;
     }
    

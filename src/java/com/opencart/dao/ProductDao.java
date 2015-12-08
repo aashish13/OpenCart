@@ -13,8 +13,11 @@ import java.util.List;
  */
 public interface ProductDao {
     public Long add(Product product);
+
+    public void update(Product product);
     public void remove(Long id);
     public Product getById(Long id);
     public List<Product> list();
+    public List<Product> getBySubCategoryId(int id);
     
 }

@@ -49,12 +49,20 @@ public class Product {
     
     @NotEmpty(message = "Product Details can not be empty")
     private String details;
-    
+    private String img;
     @OneToMany(targetEntity = ProductReview.class,mappedBy = "product")
     private Set<ProductReview> product_reviews;
     
     @NotNull(message = "Price is a mandatory field")
     private Double price;
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
 
     public Long getId() {
         return id;
